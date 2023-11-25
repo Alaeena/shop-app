@@ -1,11 +1,17 @@
 ## DISCLAIMER: 
 THIS PAGE WAS MADE AS A PERSONAL EDUCATIONAL PROJECT. This is NOT the official site of the company or brand identified on the page. The creator of this page is NOT affiliated with the company or brand in any way. This page is a personal project made in connection with an educational exercise.
 ## Website bán hàng thương mại điện tử Shop-app
+# Table of Contents
+* [Demo dự án](#demo)
+* [Chức năng](#function)
+* [Công nghệ sử dụng](#technology)
+* [Cài đặt và chạy thử](#installation)
+
 ##### shop-app là project đề án cá nhân, được xây dựng để hỗ trợ chức năng:
 - bán hàng, quản lý sản phẩm
 - mua bán, tìm kiếm sản phẩm với người dùng
 - quản lý website với admin
-## DEMO:
+## Demo dự án:
 link demo project: http://shop-app-front.s3-website-ap-southeast-1.amazonaws.com/
 ###### Tài khoản admin:
 - tk: admin
@@ -31,7 +37,7 @@ link demo project: http://shop-app-front.s3-website-ap-southeast-1.amazonaws.com
 - [PostgreSQL] - Hệ cơ sở dữ liệu
 - [Elasticsearch] - Hệ quản lý dữ liệu phụ trợ để thực hiện tìm kiếm sản phẩm
 
-## Installation
+## Cài đặt và chạy thử
 
 Để dễ dàng cài đặt project nhất, thì có thể sử dụng Docker. Để cho hướng dẫn đơn giản thì bài viết sẽ mặc định là bạn đã biết sử dụng và cài đặt docker
 
