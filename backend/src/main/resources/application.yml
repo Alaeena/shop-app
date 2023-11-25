@@ -1,0 +1,60 @@
+spring:
+  profiles:
+    active: @profileActive@
+  datasource:
+    password: ${POSTGRES_SQL_PASSWORD}
+    username: ${POSTGRES_SQL_USERNAME}
+    url: ${POSTGRES_SQL_URL}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO}
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    jwt:
+      secret-key: vBOsP0jx4OZgmWbPe0QXBRVwKHxZfN9B
+      expiration: 43200000 # 12 hour
+      refresh-token:
+        expiration: 86400000 # 1 day
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Iv1.4f6d8d991e246d10
+            client-secret: 308407f3dde8e0c13dd0ccc399dfa7c7a8650c87
+          google:
+            client-id: 957940667562-otls8943ej6qb2sci2l3dtikvq4m3p6u.apps.googleusercontent.com
+            client-secret: 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
+  mail:
+    host: ${EMAIL_HOST}
+    port: ${EMAIL_PORT}
+    username: ${EMAIL_ID}
+    password: ${EMAIL_PASSWORD}
+    default-encoding: UTF-8
+    verify:
+      host: ${VERIFY_EMAIL_HOST}
+    properties:
+      mail:
+        mime:
+          charset: UTF
+        smtp:
+          writetimeout: 10000
+          connectiontimeout: 10000
+          timeout: 10000
+          auth: true
+          starttls:
+            enable: true
+            required: true
+elasticsearch:
+  username: ${ELASTIC_USERNAME}
+  password: ${ELASTIC_PASSWORD}
+  host: ${ELASTIC_HOST}
+server:
+  port:
+    ${SERVER_PORT}
+  address: 0.0.0.0

@@ -1,0 +1,25 @@
+.tippy {
+    width: 14rem;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.qr {
+    width: 100%;
+    aspect-ratio: 1;
+}
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    width: 50%;
+    padding: 0 4px 4px;
+    display: block;
+    > img {
+        width: 100%;
+    }
+}

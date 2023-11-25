@@ -1,0 +1,97 @@
+.container {
+    width: var(--sidebar-width);
+    height: 100%;
+    background-color: rgb(48, 48, 45);
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 3px 0px;
+    background-image: url(https://themewagon.github.io/pluto/images/layout_img/pattern_h.png);
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background-color: #fff;
+    width: 100%;
+    height: var(--admin-height);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+
+    > svg {
+        width: 28px;
+        height: 28px;
+    }
+    > .avatar {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        > img {
+            background-color: #555;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            margin-right: 4px;
+        }
+        > span {
+            font-size: 1.6rem;
+            color: #555;
+            text-transform: capitalize;
+            font-weight: 500;
+        }
+    }
+}
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--admin-height);
+    font-size: 2.4rem;
+    background: rgb(29, 29, 29);
+    color: #ccc;
+
+    > strong {
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-right: 4px;
+    }
+    > span {
+        font-weight: 500;
+        user-select: none;
+        word-break: break-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.content {
+    > h4 {
+        margin: 0;
+        padding: 21px 25px 19px;
+        font-weight: 600;
+        font-size: 2rem;
+        color: #fff;
+        user-select: none;
+        border-bottom: solid #ff5722 2px;
+    }
+    .list {
+        padding: 15px 0;
+    }
+}
+.item {
+    padding: 15px 25px;
+    color: #ccc;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.15s;
+    display: flex;
+    align-items: center;
+    > img {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+    }
+    &.active,
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+}

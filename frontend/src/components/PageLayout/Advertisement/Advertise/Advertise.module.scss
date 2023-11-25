@@ -1,0 +1,119 @@
+.container {
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-radius: 4px;
+    overflow: hidden;
+    column-gap: 8px;
+}
+
+.left {
+    position: relative;
+    display: flex;
+    height: 240px;
+    border-radius: 4px;
+    flex-basis: 67%;
+    overflow: hidden;
+
+    .slider {
+        position: absolute;
+        display: flex;
+        width: 400%;
+        height: 100%;
+        transition: right 0.3s ease-in;
+
+        .item {
+            display: block;
+            height: 100%;
+            width: 25%;
+            overflow: hidden;
+
+            > img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    .left-button {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.18), rgba(255, 0, 0, 0.05));
+        left: 0;
+        &:hover {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.24), rgba(255, 0, 0, 0.1));
+        }
+    }
+    .right-button {
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.18), rgba(255, 0, 0, 0.05));
+        right: 0;
+        &:hover {
+            background-image: linear-gradient(to left, rgba(0, 0, 0, 0.24), rgba(255, 0, 0, 0.1));
+        }
+    }
+
+    .left-button,
+    .right-button {
+        transition: background-image 0.2s;
+        background-color: transparent;
+        position: absolute;
+        width: 40px;
+        height: 100%;
+        border-radius: initial;
+        cursor: pointer;
+
+        > svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+    }
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+    height: 240px;
+    overflow: hidden;
+
+    .banner + .banner {
+        margin-top: 10px;
+    }
+    .banner {
+        display: block;
+        height: calc(50% - 5px);
+        border-radius: 4px;
+        overflow: hidden;
+
+        > img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.pagination {
+    position: absolute;
+    bottom: 0;
+    padding: 8px 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: opacity 0.5s ease;
+    width: 100%;
+    text-align: center;
+    > li {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        opacity: 1;
+        border: 1px solid hsla(0, 0%, 53.7%, 0.4);
+        background-color: hsla(0, 0%, 100%, 0.4);
+        transition: background-color 0.2s;
+    }
+    > li + li {
+        margin-left: 8px;
+    }
+    .active {
+        background-color: var(--theme);
+        border-color: var(--theme);
+    }
+}

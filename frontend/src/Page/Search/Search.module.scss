@@ -1,0 +1,49 @@
+.panel {
+    display: flex;
+    align-items: center;
+    line-height: 2rem;
+    font-size: 1.8rem;
+
+    margin: 16px 0 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 12px 8px;
+    user-select: none;
+    > svg {
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+        color: var(--theme);
+    }
+    > span {
+        color: #555;
+    }
+    > strong {
+        margin-left: 6px;
+        color: var(--strong-theme);
+        font-weight: 500;
+    }
+}
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 100px 0 120px;
+
+    > img {
+        width: 420px;
+        height: 420px;
+    }
+    > span {
+        margin: 15px 0 10px;
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 1.8rem;
+    }
+    > p {
+        font-size: 1.8rem;
+        color: rgba(0, 0, 0, 0.54);
+    }
+}

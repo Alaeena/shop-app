@@ -1,0 +1,21 @@
+POSTGRES_SQL_USERNAME: postgres
+POSTGRES_SQL_PASSWORD: 123vanduc
+POSTGRES_SQL_URL: jdbc:postgresql://postgres:5432/demo
+
+#SERVER
+SERVER_PORT: 8080
+DDL_AUTO: create-drop
+
+#ELASTICSEARCH
+ELASTIC_USERNAME: user
+ELASTIC_PASSWORD: 123vanduc
+ELASTIC_HOST: host.docker.internal:9200
+
+#EMAIL CONFIG
+EMAIL_HOST: smtp.gmail.com
+EMAIL_PORT: 587
+EMAIL_ID: ducnbk7a1@gmail.com
+EMAIL_PASSWORD: lqdu zcio dwur iyup
+VERIFY_EMAIL_HOST: http://localhost:${SERVER_PORT}
+
+

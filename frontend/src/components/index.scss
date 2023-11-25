@@ -1,0 +1,104 @@
+:root {
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    --search-width: 400px;
+    --sidebar-width: 230px;
+    --header-height: 95px;
+    --admin-height: 60px;
+    --footer-height: 90px;
+    --width: 1200px;
+
+    --strong-theme: rgb(10, 104, 255);
+    --elite-theme: rgba(10, 104, 255, 0.85);
+    --theme: rgba(10, 104, 255, 0.7);
+    --normal-theme: rgba(10, 104, 255, 0.4);
+    --dim-theme: rgba(10, 104, 255, 0.2);
+    --light-theme: rgba(10, 104, 255, 0.1);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.1s;
+    transition: color 0.1s;
+}
+textarea {
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+}
+
+html {
+    font-size: 62.5%;
+    // *::-webkit-scrollbar {
+    //     width: 10px;
+    // }
+    // *::-webkit-scrollbar-track {
+    //     background: transparent;
+    // }
+    // *::-webkit-scrollbar-thumb {
+    //     background: #cdcdcd;
+    //     border-radius: 10px;
+    // }
+}
+body {
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    background-color: #eee;
+    overflow-y: overlay;
+}
+button,
+input {
+    outline: none;
+    border: none;
+}
+a[href] {
+    text-decoration: none;
+}
+.spinner {
+    animation: rotate360 1s linear infinite;
+}
+@keyframes rotate360 {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+.loading {
+    // background-image: linear-gradient(to left, var(--strong-background), var(--small-background));
+    animation: loading 1s linear infinite alternate;
+    background-size: 300%;
+}
+@keyframes loading {
+    from {
+        background-position-x: 0%;
+    }
+    to {
+        background-position-x: 100%;
+    }
+}
+
+// ========================= // GLOBAL STYLE // ========================= //
+
+.product-container {
+    max-width: var(--width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 8px 24px;
+    border-radius: 4px;
+}
+.text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #777;
+}
+.super-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}

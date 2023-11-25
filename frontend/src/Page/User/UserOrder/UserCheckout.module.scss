@@ -1,0 +1,217 @@
+.content {
+    flex: 1;
+}
+.header {
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    > div {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 16px 0;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        font-size: 1.4rem;
+        font-weight: 500;
+        transition: border-color 0.2s;
+        &:hover {
+            color: var(--theme);
+            cursor: pointer;
+        }
+        &.active {
+            color: var(--theme);
+            border-color: var(--theme);
+        }
+    }
+}
+.order {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.order-header {
+    padding: 8px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > p {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #999;
+        margin-right: 8px;
+    }
+    > span {
+        &.PENDING,
+        &.PAYING {
+            background-color: var(--normal-theme);
+        }
+        &.DELIVERING {
+            background-color: var(--theme);
+        }
+        &.CANCELLED {
+            background-color: rgba($color: red, $alpha: 0.6);
+        }
+        &.CONFIRMED {
+            background-color: rgba($color: green, $alpha: 0.3);
+        }
+        &.RECEIVED {
+            background-color: rgba($color: rgb(30, 255, 30), $alpha: 0.6);
+        }
+
+        color: #fff;
+        padding: 4px 12px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border-radius: 4px;
+    }
+}
+.shop-name {
+    display: flex;
+    align-items: center;
+
+    > img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+    > span {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--theme);
+        user-select: none;
+    }
+}
+.order-info {
+    padding: 24px 16px 12px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    user-select: none;
+
+    > div {
+        > span {
+            font-size: 1.4rem;
+            color: #777;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+        > strong {
+            color: var(--theme);
+            font-size: 1.6rem;
+        }
+    }
+}
+.order-footer {
+    padding: 0 16px 12px;
+    display: flex;
+    justify-content: end;
+}
+.button {
+    padding: 8px 16px;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    color: #777;
+    transition: opacity 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+    &.primary {
+        border-color: var(--theme);
+        background-color: var(--theme);
+        color: #fff;
+    }
+    &.tertiary {
+        border-color: rgba($color: red, $alpha: 0.6);
+        background-color: rgba($color: red, $alpha: 0.6);
+        color: #fff;
+    }
+    &.secondary {
+        border-color: rgba($color: rgb(30, 220, 30), $alpha: 0.6);
+        background-color: rgba($color: rgb(30, 220, 30), $alpha: 0.6);
+
+        color: #fff;
+    }
+}
+.button + .button {
+    margin-left: 8px;
+}
+.order-list {
+    padding: 8px 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+.product {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+    > div {
+        width: 14%;
+    }
+    &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    > img {
+        width: 80px;
+        height: 80px;
+        background-color: #eeee;
+    }
+    > h3 {
+        flex: 1;
+        color: #777;
+        padding-left: 12px;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+
+        height: 36px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    }
+    .number {
+        margin-left: 8px;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #999;
+        text-align: center;
+        width: 10% !important;
+        line-height: 100%;
+    }
+    .total {
+        font-size: 1.4rem;
+        text-align: center;
+        font-weight: 600;
+        color: var(--strong-theme);
+    }
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > span {
+            font-size: 1.2rem;
+            color: #777;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+        > strong {
+            font-size: 1.4rem;
+            color: #333;
+        }
+    }
+}

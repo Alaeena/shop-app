@@ -1,0 +1,54 @@
+.specification {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 15px;
+}
+.specification-header {
+    background: rgba(0, 0, 0, 0.04);
+    color: #777;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0.875rem;
+    text-transform: capitalize;
+}
+.content {
+    padding: 10px 15px;
+}
+.item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    > span {
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 1.4rem;
+        height: 1.8rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        box-sizing: border-box;
+        width: 10rem;
+        padding-right: 0.75rem;
+    }
+    > i {
+        margin-right: 16px;
+        font-size: 1.4rem;
+    }
+    > a {
+        margin-right: 16px;
+        color: var(--theme);
+        text-decoration: underline !important;
+        font-size: 1.4rem;
+    }
+    > p {
+        font-size: 1.4rem;
+    }
+}
+.item + .item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.description {
+    > p {
+        font-size: 1.3rem;
+        color: #555;
+    }
+}

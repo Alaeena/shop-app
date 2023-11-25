@@ -1,0 +1,96 @@
+.form-group {
+    position: relative;
+    margin-bottom: 8px;
+    > span {
+        font-size: 1.4rem;
+        line-height: 15px;
+        margin: 4px 0px 4px;
+        color: rgb(255, 0, 0);
+        user-select: none;
+        display: flex;
+    }
+}
+
+.form-group.error {
+    .form-wrapper {
+        border-color: rgb(255, 0, 0);
+    }
+    input {
+        color: rgb(255, 0, 0);
+    }
+}
+.form-wrapper {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #777;
+    border-radius: 2px;
+    .wrapper-content {
+        position: relative;
+        flex: 1;
+    }
+    input {
+        background-color: transparent;
+        color: var(--text);
+        line-height: 100%;
+        padding-left: 12px;
+        font-size: 1.6rem;
+        height: 44px;
+        width: 100%;
+    }
+    input::-ms-reveal {
+        display: none;
+    }
+}
+.icon-container {
+    position: absolute;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-right: 10px;
+    right: 0;
+    top: 0;
+}
+.icon-error {
+    width: 24px;
+    height: 24px;
+    fill: rgb(255, 0, 0);
+}
+.icon-eye {
+    width: 28px;
+    height: 28px;
+    fill: var(--small-text);
+    cursor: pointer;
+}
+
+// WRAPPER OPTION
+.wrapper-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 6px 12px 12px;
+    height: 44px;
+    span {
+        color: var(--text);
+        font-size: 1.4rem;
+    }
+    svg {
+        margin-left: 6px;
+        transition: all 0.3s ease 0s;
+    }
+    ::before {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 15%;
+        height: 70%;
+        width: 2px;
+        background-color: var(--line-color);
+    }
+}
+.wrapper-option.active {
+    svg {
+        transform: rotate(180deg);
+    }
+}

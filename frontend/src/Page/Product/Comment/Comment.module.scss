@@ -1,0 +1,132 @@
+.container {
+    padding: 25px 25px 0;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.header {
+    > h3 {
+        font-size: 1.6rem;
+        color: #555;
+        margin-right: 0.2em;
+        text-transform: uppercase;
+    }
+    > .header-option {
+        min-height: 5rem;
+        background-color: #fffbf8;
+        border: 1px solid #f9ede5;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: start;
+        border-radius: 2px;
+        box-sizing: border-box;
+        padding: 1.875rem;
+    }
+}
+.header-left {
+    > div + div {
+        margin-top: 4px;
+    }
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        > strong {
+            color: var(--theme);
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+        }
+        > svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 4px;
+        }
+        > span {
+            font-size: 1.3rem;
+            margin-left: 4px;
+            color: var(--theme);
+        }
+    }
+}
+.header-right {
+    flex: 1;
+    margin-left: 0.9375rem;
+    height: 100%;
+    display: flex;
+
+    > button.active {
+        border-color: var(--normal-theme);
+        background-color: var(--light-theme);
+        color: var(--normal-theme);
+    }
+    > button:hover {
+        cursor: pointer;
+        border-color: var(--normal-theme);
+        background-color: var(--light-theme);
+        color: var(--normal-theme);
+    }
+    > button {
+        transition: 0.2s;
+        user-select: none;
+        padding: 4px 12px;
+        text-align: center;
+        color: #333;
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        border-radius: 2px;
+        margin-right: 8px;
+        margin-bottom: 0.3125rem;
+        margin-top: 0.3125rem;
+    }
+}
+.item {
+    display: flex;
+    padding: 12px 0 8px;
+    > a {
+        margin-right: 12px;
+        > img {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+.item + .item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    > a {
+        color: var(--theme);
+        font-size: 1.4rem;
+    }
+    > span {
+        color: #777;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+    > p {
+        width: 60%;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #777;
+        padding: 8px 0;
+    }
+    > .stars {
+        margin: 5px 0;
+        > svg {
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+    > .thumbnails {
+        > img {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}

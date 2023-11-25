@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    background-color: #fff;
+    padding: 0 16px;
+    height: var(--footer-height);
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    color: #555;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    border-top: 3px solid var(--dim-theme);
+
+    > span {
+        display: flex;
+        align-items: center;
+        color: var(--normal-theme);
+        > svg {
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    > img {
+        height: 40px;
+    }
+}

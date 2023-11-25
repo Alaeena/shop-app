@@ -1,0 +1,113 @@
+.container {
+    padding: 12px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.header {
+    color: #555;
+    margin-bottom: 12px;
+    > strong {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    > span {
+        font-weight: 500;
+        margin-left: 4px;
+        font-size: 2.8rem;
+    }
+}
+
+.content {
+    width: 100%;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+    > .box {
+        margin: 12px 0;
+        border-radius: 5px;
+    }
+}
+.row {
+    width: 100%;
+    padding: 8px 0;
+}
+.main-category {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #777;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #eee;
+
+    > span {
+        border-right: 1px solid #fff;
+        margin-right: 8px;
+        line-height: 2rem;
+        width: 20px;
+        height: 20px;
+    }
+    > p {
+        flex: 1;
+    }
+}
+.sub-category {
+    background-color: #eee;
+    list-style: none;
+    padding: 4px 12px;
+}
+.card {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 8px;
+    margin: 4px 0;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ddd;
+    }
+
+    > span {
+        min-width: 20%;
+    }
+    > ul {
+        > li {
+            display: inline;
+            margin-right: 5px;
+            border-radius: 5px;
+            background-color: #989898;
+            color: #fff;
+            padding: 6px 12px;
+        }
+    }
+}
+
+.button {
+    &.add {
+        background-color: rgb(131, 215, 5);
+    }
+    &.edit {
+        background-color: rgb(111, 193, 255);
+    }
+    &.delete {
+        background-color: rgb(245, 100, 100);
+    }
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: opacity 0.15s;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+}
