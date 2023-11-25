@@ -2,10 +2,10 @@
 THIS PAGE WAS MADE AS A PERSONAL EDUCATIONAL PROJECT. This is NOT the official site of the company or brand identified on the page. The creator of this page is NOT affiliated with the company or brand in any way. This page is a personal project made in connection with an educational exercise.
 ## Website bán hàng thương mại điện tử Shop-app
 # Table of Contents
-* [Demo dự án](#demo)
-* [Chức năng](#function)
-* [Công nghệ sử dụng](#technology)
-* [Cài đặt và chạy thử](#installation)
+* [Demo dự án](#Demo-dự-án)
+* [Chức năng](#Chức-năng)
+* [Công nghệ sử dụng](#Công-nghệ-sử-dụng)
+* [Cài đặt và chạy thử](#Cài-đặt-và-chạy-thử)
 
 ##### shop-app là project đề án cá nhân, được xây dựng để hỗ trợ chức năng:
 - bán hàng, quản lý sản phẩm
