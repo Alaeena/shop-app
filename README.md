@@ -39,17 +39,17 @@ link demo project: http://shop-app-front.s3-website-ap-southeast-1.amazonaws.com
 
 ## Cài đặt và chạy thử
 
-Để dễ dàng cài đặt project nhất, thì có thể sử dụng Docker. Để cho hướng dẫn đơn giản thì bài viết sẽ mặc định là bạn đã biết sử dụng và cài đặt docker
+Để dễ dàng cài đặt project nhất, thì dự án sẽ sử dụng Docker. Để cho hướng dẫn đơn giản thì bài viết sẽ mặc định là bạn đã biết sử dụng và cài đặt docker
 
 Mặc định, sau khi tải project về và giải nén ra ta sẽ được mô hình của project như sau:
  ![image](https://github.com/Alaeena/shop-app/assets/151113431/9a03e648-a49e-41d2-a4ac-9c91c581a41c)
 
-Chạy docker lên, sau đó chạy lệnh:
+Tiếp theo, chạy docker lên, sau đó chạy lệnh tại thư mục gốc:
 ```sh
 docker-compose up
 ```
-Mặc định, project sẽ sử dụng port 3000. Ta có những port sau:
-( tất cả contianer sẽ chạy xong trong khoảng 1 phút )
+Mặc định, project sẽ sử dụng port 3000 để render giao diện. Project sẽ sử dụng những port sau:
+( tất cả container sẽ chạy xong trong khoảng 1 phút )
 - http://localhost:9200: server của elasticsearch
 - http://localhost:8080: server của spring boot ( nơi chạy backend )
 - http://localhost:3000: server của react ( nơi chạy giao diện )
