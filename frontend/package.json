@@ -1,5 +1,5 @@
 {
-    "homepage": "https://alaeena.github.io/shop-app//#/",
+    "homepage": "https://alaeena.github.io/shop-app/#/",
     "scripts": {
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",
