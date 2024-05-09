@@ -1,5 +1,5 @@
 {
-    "homepage": "https://main.d3172fi9ysps00.amplifyapp.com/#/",
+    "homepage": "https://alaeena.github.io/shop-app//#/",
     "scripts": {
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
