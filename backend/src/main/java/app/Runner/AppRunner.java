@@ -35,7 +35,7 @@ public class AppRunner implements CommandLineRunner {
     private final OrderItemRepository orderItemRepository;
     private final AddressRepository addressRepository;
 
-    private final ProductElasticsearchRepository elasticsearchRepository;
+//    private final ProductElasticsearchRepository elasticsearchRepository;
 
 
     private void generateComment(List<Map<String, String>> list, List<Product> productList) {
@@ -93,12 +93,12 @@ public class AppRunner implements CommandLineRunner {
         commentRepository.saveAll(comments);
     }
 
-    private void createElasticProduct(List<Product> list) {
-        List<ProductElasticsearch> elasticsearchList = list.stream()
-                .map(ProductMapper::mapToElastic)
-                .toList();
-        elasticsearchRepository.saveAll(elasticsearchList);
-    }
+//    private void createElasticProduct(List<Product> list) {
+//        List<ProductElasticsearch> elasticsearchList = list.stream()
+//                .map(ProductMapper::mapToElastic)
+//                .toList();
+//        elasticsearchRepository.saveAll(elasticsearchList);
+//    }
 
     @Override
     public void run(String... args) throws Exception {
@@ -182,7 +182,7 @@ public class AppRunner implements CommandLineRunner {
         orderItemRepository.saveAll(list3);
 
         generateComment(list, productList);
-        createElasticProduct(productList);
+//        createElasticProduct(productList);
     }
 
 }

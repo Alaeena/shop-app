@@ -3,6 +3,7 @@ package app.Config;
 
 import app.Security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -32,6 +33,8 @@ public class SecurityConfig {
     private final AuthenticationProvider authenticationProvider;
     private final JwtAuthFilter jwtAuthFilter;
     private final LogoutHandler logoutHandler;
+    @Value("${client}")
+    private String clientUrl;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -61,7 +64,7 @@ public class SecurityConfig {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of("http://localhost:3000", "http://shop-app-front.s3-website-ap-southeast-1.amazonaws.com"));
+        config.setAllowedOrigins(List.of("http://localhost:3000", clientUrl));
         config.setAllowedHeaders(List.of(
                 ORIGIN,
                 CONTENT_TYPE,

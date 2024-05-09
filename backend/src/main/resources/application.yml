@@ -1,3 +1,4 @@
+client : ${CLIENT}
 spring:
   profiles:
     active: @profileActive@
