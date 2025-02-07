@@ -11,8 +11,6 @@ THIS PAGE WAS MADE AS A PERSONAL EDUCATIONAL PROJECT. This is NOT the official s
 - bán hàng, quản lý sản phẩm
 - mua bán, tìm kiếm sản phẩm với người dùng
 - quản lý website với admin
-## Demo dự án:
-link demo project: http://shop-app-front.s3-website-ap-southeast-1.amazonaws.com/
 ###### Tài khoản admin:
 - tk: admin
 - mk: 123
