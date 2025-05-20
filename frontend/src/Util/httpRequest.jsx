@@ -1,6 +1,6 @@
 import axios from 'axios';
 const devURL = 'http://localhost:8080';
-// const productionURL = 'http://shop-app-api-env.eba-au48hmby.ap-southeast-1.elasticbeanstalk.com';
+
 export const baseURL = devURL;
 const request = axios.create({
     baseURL,
