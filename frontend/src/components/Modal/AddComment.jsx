@@ -45,8 +45,11 @@ function AddComment({ payload, onBack }) {
                         <img src={url} alt="avatar" />
                         <p>{name}</p>
                     </div>
-                    <span>Chất lượng sản phẩm</span>
-                    <div className={cx('option')}>{renderStar()}</div>
+                    
+                    <div className={cx('star-option')}>
+                        <span>Chất lượng sản phẩm</span>
+                        <div>{renderStar()}</div>
+                    </div>
                     <div className={cx('comment-content')}>
                         <div className={cx('description')}>
                             <textarea

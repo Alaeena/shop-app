@@ -1,4 +1,8 @@
-client : ${CLIENT}
+server:
+  port:
+    ${SERVER_PORT}
+  client-url: ${CLIENT_URL}
+  address: 0.0.0.0
 spring:
   profiles:
     active: @profileActive@
@@ -9,7 +13,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: ${DDL_AUTO}
+      ddl-auto: create-drop
     properties:
       hibernate:
         format_sql: true
@@ -19,9 +23,9 @@ spring:
   security:
     jwt:
       secret-key: vBOsP0jx4OZgmWbPe0QXBRVwKHxZfN9B
-      expiration: 43200000 # 12 hour
+      expiration: 3600 # in seconds
       refresh-token:
-        expiration: 86400000 # 1 day
+        expiration: 86400 # 1 day
     oauth2:
       client:
         registration:
@@ -51,11 +55,11 @@ spring:
           starttls:
             enable: true
             required: true
-elasticsearch:
-  username: ${ELASTIC_USERNAME}
-  password: ${ELASTIC_PASSWORD}
-  host: ${ELASTIC_HOST}
-server:
-  port:
-    ${SERVER_PORT}
-  address: 0.0.0.0
+  vnpay:
+    url: ${VNPAY_URL}
+    tmn-code: ${VNPAY_TMNCODE}
+    secret-key: ${VNPAY_SECRET}
+  data:
+    redis:
+      port: ${REDIS_PORT}
+      host: ${REDIS_HOSTNAME}

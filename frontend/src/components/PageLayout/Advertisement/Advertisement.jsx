@@ -1,5 +1,4 @@
 import Advertise from './Advertise/Advertise';
-import AdvertiseList from './AdvertiseList';
 
 import classNames from 'classnames/bind';
 import Styles from './Advertisement.module.scss';
@@ -9,7 +8,6 @@ function Advertisement() {
     return (
         <div className={cx('banner')}>
             <Advertise />
-            <AdvertiseList />
         </div>
     );
 }

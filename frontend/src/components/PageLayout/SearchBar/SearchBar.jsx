@@ -42,6 +42,7 @@ function SearchBar() {
         <div className={cx('container')}>
             <div className={cx('header')}>Bộ lọc tìm kiếm</div>
             <div className={cx('category')}>
+                <div className={cx('category-header')}>Theo danh mục</div>
                 <Link to={`${routes.category}/${id}`} className={cx('link', { active: categoryId == id })}>
                     {name}
                 </Link>

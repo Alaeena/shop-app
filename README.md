@@ -33,7 +33,6 @@ THIS PAGE WAS MADE AS A PERSONAL EDUCATIONAL PROJECT. This is NOT the official s
 - [ReactJS] - sử dụng để build giao diện, map dữ liệu
 - [Spring boot] - Sử dụng để tạo api
 - [PostgreSQL] - Hệ cơ sở dữ liệu
-- [Elasticsearch] - Hệ quản lý dữ liệu phụ trợ để thực hiện tìm kiếm sản phẩm
 
 ## Cài đặt và chạy thử
 

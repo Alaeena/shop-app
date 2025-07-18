@@ -12,10 +12,10 @@ export const getOrder = async (pageNumber, orderState) => {
         return null;
     }
 };
-export const addOrder = async (addressId, items, checkoutType) => {
+export const createOrder = async (addressId, items, checkoutType) => {
     try {
         const res = await axios.post(`${baseURL}/order`, { addressId, items, checkoutType });
-        return res.data;
+        return res.data.data;
     } catch (err) {
         console.log(err);
         return null;

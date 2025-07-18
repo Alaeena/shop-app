@@ -33,7 +33,11 @@
 textarea {
     font-family: 'Helvetica Neue', Helvetica, Arial;
 }
-
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 html {
     font-size: 62.5%;
     // *::-webkit-scrollbar {

@@ -18,12 +18,36 @@
         align-items: center;
         color: var(--normal-theme);
         > svg {
-            margin-right: 10px;
             width: 40px;
             height: 40px;
         }
     }
-    > img {
-        height: 40px;
+}
+.social {
+    display: flex;
+    flex-direction: column;
+
+    > a {
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        svg {
+            opacity: 0.5;
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        span {
+            color: #555;
+        }
+    }
+    > a:hover {
+        cursor: pointer;
+        span {
+            color: var(--theme);
+        }
+        svg {
+            fill: var(--theme);
+        }
     }
 }

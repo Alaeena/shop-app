@@ -5,12 +5,16 @@ CLIENT: https://alaeena.github.io/shop-app/
 
 #SERVER
 SERVER_PORT: 8080
-DDL_AUTO: create-drop
+CLIENT_URL: http://localhost:3000
 
-#ELASTICSEARCH
-ELASTIC_USERNAME: user
-ELASTIC_PASSWORD: 123vanduc
-ELASTIC_HOST: host.docker.internal:9200
+#VNPAY
+VNPAY_TMNCODE: 6SBN9I5G
+VNPAY_SECRET: CZOENDQGM8R1U2DW20Y5B49E1YXEIJ1M
+VNPAY_URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+
+#REDIS
+REDIS_PORT: 6379
+REDIS_HOSTNAME: localhost
 
 #EMAIL CONFIG
 EMAIL_HOST: smtp.gmail.com

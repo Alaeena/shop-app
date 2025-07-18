@@ -10,35 +10,11 @@ services:
       - 5432:5432
     networks:
       - shop-network
-  elasticsearch:
-    container_name: elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.10.4
-    environment:
-      ES_JAVA_OPTS: -Xms2g -Xmx2g
-      node.name: default-node
-      cluster.name: default-cluster
-      discovery.type: single-node
-      ELASTICSEARCH_USERNAME: user
-      ELASTIC_PASSWORD: 123vanduc
-      bootstrap.memory_lock: true
-      xpack.security.enabled: false
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
-      interval: 10s
-      timeout: 10s
-      retries: 10
-    ports:
-      - 9200:9200
-    networks:
-      - shop-network
   shop-app-api:
     container_name: shop-app-api
     build:
       context: ./backend/
       dockerfile: Dockerfile
-    depends_on:
-      elasticsearch:
-        condition: service_healthy
     ports:
       - 8080:8080
     networks:

@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import { addOrder } from '@/Service/OrderService';
+import { createOrder } from '@/Service/OrderService';
 import CheckoutHeader from './CheckoutHeader';
 import CheckoutList from './CheckoutList';
 
@@ -16,16 +16,18 @@ const VND = new Intl.NumberFormat('vi-VN', {
 });
 const ONLINE = 'ONLINE';
 const UPFRONT = 'UPFRONT';
+const VNPAY = 'VNPAY';
 const option = {
-    ONLINE: 'Thẻ Tín dụng/Ghi nợ',
+    ONLINE: 'Chuyển khoản trực tiếp',
     UPFRONT: 'Thanh toán khi nhận hàng',
+    VNPAY: 'Thanh toán bằng VNPAY',
 };
 
 function Checkout() {
     const [address, setAddress] = useState({});
-    const [payment, setPayment] = useState(ONLINE);
-    const navigate = useNavigate();
+    const [payment, setPayment] = useState(VNPAY);
     const { state } = useLocation();
+    const navigate = useNavigate();
 
     const renderList = () => state.map((list, index) => <CheckoutList key={index} data={list} />);
     const itemList = state.reduce((prev, value) => prev.concat(value.cart), []);
@@ -40,8 +42,13 @@ function Checkout() {
     const handleClick = () => {
         const items = itemList.map((item) => item.id);
 
-        addOrder(address.id, items, payment).then(() => {
-            navigate(routes.order);
+        createOrder(address.id, items, payment).then((res) => {
+            console.log(res.redirect);
+            if (res.redirect) {
+                window.location.replace(res.redirect);
+            } else {
+                navigate(routes.order);
+            }
         });
     };
     return (
@@ -59,6 +66,9 @@ function Checkout() {
             <div className={cx('content')}>
                 <div className={cx('payment')}>
                     <span>Phương thức thanh toán</span>
+                    <button onClick={() => setPayment(VNPAY)} className={cx({ active: payment === VNPAY })}>
+                        {option.VNPAY}
+                    </button>
                     <button onClick={() => setPayment(ONLINE)} className={cx({ active: payment === ONLINE })}>
                         {option.ONLINE}
                     </button>

@@ -12,7 +12,7 @@ var timerId;
 function Slider() {
     const [number, setNumber] = useState(1);
     const [width, setWidth] = useState(null);
-    const maxNumber = 4;
+    const maxNumber = 7;
 
     useEffect(() => {
         if (!width) {
@@ -20,7 +20,7 @@ function Slider() {
         }
         timerId = setTimeout(() => {
             setNumber((prev) => (prev + 1 > maxNumber ? 1 : prev + 1));
-        }, 2000);
+        }, 2500);
         return () => clearTimeout(timerId);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [width, number]);
@@ -48,16 +48,25 @@ function Slider() {
         <>
             <div ref={onRefChange} style={{ right: (number - maxNumber) * width }} className={cx('slider')}>
                 <Link className={cx('item')}>
-                    <img src={images.banner1} alt="banner"></img>
+                    <img src={images.slider1} alt="banner"></img>
                 </Link>
                 <Link className={cx('item')}>
-                    <img src={images.banner2} alt="banner"></img>
+                    <img src={images.slider2} alt="banner"></img>
                 </Link>
                 <Link className={cx('item')}>
-                    <img src={images.banner3} alt="banner"></img>
+                    <img src={images.slider3} alt="banner"></img>
                 </Link>
                 <Link className={cx('item')}>
-                    <img src={images.banner4} alt="banner"></img>
+                    <img src={images.slider4} alt="banner"></img>
+                </Link>
+                <Link className={cx('item')}>
+                    <img src={images.slider5} alt="banner"></img>
+                </Link>
+                <Link className={cx('item')}>
+                    <img src={images.slider6} alt="banner"></img>
+                </Link>
+                <Link className={cx('item')}>
+                    <img src={images.slider7} alt="banner"></img>
                 </Link>
             </div>
             <button onClick={onLeftClick} className={cx('left-button')}>

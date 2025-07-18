@@ -8,7 +8,7 @@ import classNames from 'classnames/bind';
 import Styles from './Checkout.module.scss';
 const cx = classNames.bind(Styles);
 
-function CheckoutHeader({ address, setAddress }) {
+function CheckoutHeader({ address = {}, setAddress }) {
     const [list, setList] = useState([]);
     const [visible, setVisible] = useState(false);
 

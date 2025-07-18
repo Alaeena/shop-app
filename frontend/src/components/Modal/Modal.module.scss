@@ -60,13 +60,22 @@
         font-size: 1.6rem;
     }
 }
-.option {
-    > svg {
+
+.star-option {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+    > span{
+        margin: 0;
+    }
+    > div > svg {
         cursor: pointer;
         margin-right: 4px;
         width: 20px;
         height: 20px;
     }
+}
+.option {
     > button + button {
         margin-left: 8px;
     }

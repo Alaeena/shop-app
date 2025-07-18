@@ -1,5 +1,6 @@
 import { payOrder, getOrder, cancelOrder } from '@/Service/OrderService';
 import { addCartWithOrder } from '@/Service/CartService';
+import { routes } from '@/routes';
 
 import UserReview from './UserReview';
 import OrderItem from './OrderItem';
@@ -21,24 +22,7 @@ const stateList = {
 const handleCancel = (orderId) => cancelOrder(orderId);
 const handlePay = (orderId) => payOrder(orderId);
 const handleAddWithOrder = (orderId) => addCartWithOrder(orderId);
-const option = {
-    PAYING: [
-        { text: 'Thanh toán', onClick: handlePay, style: 'secondary' },
-        { text: 'Hủy đơn', onClick: handleCancel, style: 'tertiary' },
-    ],
-    PENDING: [{ text: 'Liên Hệ Người Bán' }, { text: 'Hủy đơn', onClick: handleCancel, style: 'tertiary' }],
-    CONFIRMED: [{ text: 'Xem thông tin hóa đơn' }],
-    DELIVERING: [{ text: 'Xem thông tin hóa đơn' }],
-    RECEIVED: [
-        { text: 'Đánh giá sản phẩm', element: UserReview, style: 'secondary' },
-        { text: 'Thêm vào giỏ hàng', onClick: handleAddWithOrder, navigate: '/cart', style: 'primary' },
-        { text: 'Xem thông tin hóa đơn' },
-    ],
-    CANCELLED: [
-        { text: 'Thêm vào giỏ hàng', onClick: handleAddWithOrder, navigate: '/cart', style: 'primary' },
-        { text: 'Xem Chi Tiết Hủy Đơn' },
-    ],
-};
+
 const VND = new Intl.NumberFormat('vi-VN', {
     style: 'currency',
     currency: 'VND',
@@ -48,6 +32,24 @@ function OrderDetail({ data, section, setList }) {
     const { items, shop, state, total } = data;
 
     const renderItem = (products) => products.map((product, key) => <OrderItem key={key} data={product} />);
+    const option = {
+        PAYING: [
+            { text: 'Thanh toán', onClick: handlePay, style: 'secondary' },
+            { text: 'Hủy đơn', onClick: handleCancel, style: 'tertiary' },
+        ],
+        PENDING: [{ text: 'Liên Hệ Người Bán' }, { text: 'Hủy đơn', onClick: handleCancel, style: 'tertiary' }],
+        CONFIRMED: [{ text: 'Xem thông tin hóa đơn' }],
+        DELIVERING: [{ text: 'Xem thông tin hóa đơn' }],
+        RECEIVED: [
+            { text: 'Đánh giá sản phẩm', element: UserReview, style: 'secondary' },
+            { text: 'Thêm vào giỏ hàng', onClick: handleAddWithOrder, navigate: routes.cart, style: 'primary' },
+            { text: 'Xem thông tin hóa đơn' },
+        ],
+        CANCELLED: [
+            { text: 'Thêm vào giỏ hàng', onClick: handleAddWithOrder, navigate: routes.cart, style: 'primary' },
+            { text: 'Xem Chi Tiết Hủy Đơn' },
+        ],
+    };
     const renderOption = (state) =>
         option[state].map((button, key) => {
             const style = button.style || '';

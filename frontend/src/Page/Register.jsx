@@ -100,7 +100,7 @@ function Register() {
                 </div>
                 <div className={cx('register')}>
                     <span>Bạn đã có tài khoản?</span>
-                    <Link to={routes.register}>Đăng nhập</Link>
+                    <Link to={routes.login}>Đăng nhập</Link>
                 </div>
             </div>
         </div>

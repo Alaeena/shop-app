@@ -8,7 +8,6 @@ function WithSidebar({ children }) {
     return (
         <>
             <Header />
-
             <div className={cx('container')}>
                 <SearchBar />
                 <div className={cx('right')}>{children}</div>

@@ -112,9 +112,10 @@
             position: absolute;
             text-transform: uppercase;
             color: #fff;
-            background-color: var(--normal-theme);
+            background-color: orangered;
             height: 25px;
             width: 30px;
+            font-weight: 900;
             line-height: 30px;
             text-align: center;
         }
@@ -124,7 +125,7 @@
             top: 25px;
             content: '';
             border: 15px solid transparent;
-            border-top: 10px solid var(--normal-theme);
+            border-top: 10px solid orangered;
         }
         > span {
             position: absolute;

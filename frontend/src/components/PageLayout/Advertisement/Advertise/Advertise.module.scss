@@ -19,14 +19,14 @@
     .slider {
         position: absolute;
         display: flex;
-        width: 400%;
+        width: 700%;
         height: 100%;
         transition: right 0.3s ease-in;
 
         .item {
             display: block;
             height: 100%;
-            width: 25%;
+            width: calc(100% / 7);
             overflow: hidden;
 
             > img {

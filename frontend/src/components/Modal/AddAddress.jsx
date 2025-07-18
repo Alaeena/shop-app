@@ -9,18 +9,18 @@ const cx = classNames.bind(Styles);
 const modalRoot = document.getElementById('root');
 
 function AddAddress({ setVisible, setList, item, setItem }) {
-    const [name, setName] = useState(item.name);
+    const [receiver, setReceiver] = useState(item.name);
     const [phone, setPhone] = useState(item.phone);
     const [address, setAddress] = useState(item.address);
     const [addressType, setAddressType] = useState(item.addressType);
 
-    const disabled = !name || !phone || !address || !addressType;
+    const disabled = !receiver || !phone || !address || !addressType;
     const isEmpty = (obj) => {
         return Object.keys(obj).length === 0;
     };
     const handleSubmit = () => {
         const func = isEmpty(item) ? addAddress : updateAddress;
-        const newItem = { ...item, ...{ name, phone, address, addressType } };
+        const newItem = { ...item, ...{ receiver, phone, address, addressType } };
         func(newItem).then((res) => {
             if (res) {
                 setList(res.data);
@@ -38,7 +38,12 @@ function AddAddress({ setVisible, setList, item, setItem }) {
         <div className={cx('overlay')}>
             <div className={cx('content')}>
                 <h2>{isEmpty(item) ? 'Địa chỉ mới' : 'Cập nhật địa chỉ'}</h2>
-                <input name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Họ và tên" />
+                <input
+                    name="name"
+                    value={receiver}
+                    onChange={(e) => setReceiver(e.target.value)}
+                    placeholder="Họ và tên"
+                />
                 <input
                     name="phone"
                     value={phone}

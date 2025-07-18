@@ -34,14 +34,12 @@ function App() {
             );
         });
     return (
-        <>
-            <div className="App">
-                <Routes>
-                    {render()}
-                    {renderPrivate()}
-                </Routes>
-            </div>
-        </>
+        <div className="App">
+            <Routes>
+                {render()}
+                {renderPrivate()}
+            </Routes>
+        </div>
     );
 }
 

@@ -56,7 +56,7 @@ function ShopItem({ data }) {
                 >
                     -
                 </button>
-                <input type="number" max={20} min={1} value={value} onChange={handleInput} />
+                <input type="number" value={value} onChange={handleInput} />
                 <button
                     onClick={() => setValue((prev) => (prev + 1 >= MAX ? MAX : prev + 1))}
                     className={cx('function-right')}

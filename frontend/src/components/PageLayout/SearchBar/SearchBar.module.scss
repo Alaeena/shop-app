@@ -25,6 +25,13 @@
 .category {
     padding: 12px 0;
     border-bottom: 3px solid var(--light-theme);
+    .category-header {
+        font-weight: 600;
+        color: #777;
+    }
+    .link {
+        margin-left: 16px;
+    }
     > span {
         color: var(--theme);
         font-size: 1.2rem;

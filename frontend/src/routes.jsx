@@ -1,4 +1,4 @@
-import { Home, Category, Product, Search, Login, Register, Error } from './Page';
+import { Home, Category, Product, Search, Login, Register, Payment, Error } from './Page';
 import { UserAddress, UserProfile, UserOrder, Cart, Checkout } from './Page';
 import { AdminCategory, AdminUser } from './admin';
 import { RequireAuth, RequireAdmin } from './Util';
@@ -19,6 +19,7 @@ const routes = {
     productSlug: '/product/:productId',
 
     // USER ROUTES
+    payment: '/payment',
     cart: '/user/cart',
     checkout: '/user/checkout',
     profile: '/user/profile',
@@ -43,6 +44,7 @@ const publicRoutes = [
     { path: routes.search, component: Search, layout: DefaultLayout },
     { path: routes.categorySlug, component: Category, layout: WithSidebar },
     { path: routes.productSlug, component: Product, layout: DefaultLayout },
+    { path: routes.payment, component: Payment, layout: DefaultLayout },
 
     { path: routes.login, component: Login, layout: DefaultLayout },
     { path: routes.register, component: Register, layout: DefaultLayout },

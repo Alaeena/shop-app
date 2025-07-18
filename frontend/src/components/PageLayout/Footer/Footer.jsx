@@ -1,5 +1,5 @@
 import { Logo } from '@/components/Icon/Fill';
-import images from '@/assets/img';
+import { Github, Linkedin } from '@/components/Icon/Fill';
 
 import classNames from 'classnames/bind';
 import Styles from './Footer.module.scss';
@@ -12,7 +12,16 @@ function Footer() {
                 <Logo />
                 Shop-app
             </span>
-            <img src={images.animehay} alt="Quảng cáo"></img>
+            <div className={cx('social')}>
+                <a href="https://github.com/Alaeena">
+                    <Github />
+                    <span>Alaeena</span>
+                </a>
+                <a href="https://www.linkedin.com/in/alaeena/">
+                    <Linkedin />
+                    <span>Alaeena</span>
+                </a>
+            </div>
         </div>
     );
 }
