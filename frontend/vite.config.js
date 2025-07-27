@@ -8,7 +8,7 @@ export default defineConfig({
             '@': '/src',
         },
     },
-    base: '/shop-app/',
+    base: '/shop-app',
     server: {
         host: '0.0.0.0',
         port: 3000,
