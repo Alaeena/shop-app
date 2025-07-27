@@ -5,7 +5,7 @@ server:
   address: 0.0.0.0
 spring:
   profiles:
-    active: @profileActive@
+    active: production
   datasource:
     password: ${POSTGRES_SQL_PASSWORD}
     username: ${POSTGRES_SQL_USERNAME}
@@ -13,7 +13,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true

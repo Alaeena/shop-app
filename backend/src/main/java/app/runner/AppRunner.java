@@ -4,10 +4,8 @@ import app.model.*;
 import app.model.enums.AddressType;
 import app.model.enums.ShopType;
 import app.repository.postgres.*;
-import app.repository.redis.UserOrdersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -23,14 +21,13 @@ import static app.model.enums.Role.ADMIN;
 import static app.model.enums.Role.USER;
 import static app.runner.RunnerUtil.createUser;
 
-@Profile({"dev", "docker"})
+//@Profile({"dev", "docker"})
 @Component
 @RequiredArgsConstructor
 public class AppRunner implements CommandLineRunner {
     private final UserRepository userRepository;
     private final CommentRepository commentRepository;
     private final CategoryRunner categoryRunner;
-    private final UserOrdersRepository userOrdersRepository;
 
     private final ShopRepository shopRepository;
     private final OrderRepository orderRepository;

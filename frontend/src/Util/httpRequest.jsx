@@ -1,5 +1,5 @@
 import axios from 'axios';
-const devURL = 'http://localhost:8080';
+const devURL = 'https://alaeena.azurewebsites.net';
 
 export const baseURL = devURL;
 const request = axios.create({
