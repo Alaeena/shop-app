@@ -7,7 +7,7 @@ import './components/index.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <UserProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/shop-app">
             <ScrollToTop />
             <App />
         </BrowserRouter>

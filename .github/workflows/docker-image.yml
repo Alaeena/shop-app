@@ -2,11 +2,13 @@ name: Docker Image CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ 'main' ]
   pull_request:
-    branches:
-      - main
+    branches: [ 'main' ]
+  workflow_run:
+    workflows: [ "Build and deploy to Azure" ]
+    types:
+      - completed
 jobs:
   update-backend:
     name: Build & push back-end image
