@@ -1,0 +1,31 @@
+name: Build front end and deploy to github page
+
+on:
+  workflow_run:
+    workflows: [ "Build backend and deploy to Azure" ]
+    types:
+      - completed
+jobs:
+  deploy_frontend:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        uses: npm install
+
+      - name: Build vite project
+        uses: npm run build
+
+      - name: Deploy to github pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
