@@ -20,7 +20,7 @@ function Header() {
                 <div className={cx('wrapper')}>
                     <Link to={routes.root} className={cx('logo')}>
                         <Logo />
-                        <span className="super-text">Shop-app</span>
+                        <span className="super-text">Shop app</span>
                     </Link>
                     <div className={cx('right-container')}>
                         <HeaderSearch />
