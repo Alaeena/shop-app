@@ -1,6 +1,6 @@
 package app.model.dto;
 
-import app.model.ProductElasticsearch;
+import app.model.postgres.ProductElasticsearch;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 

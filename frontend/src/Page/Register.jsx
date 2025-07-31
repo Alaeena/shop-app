@@ -57,8 +57,8 @@ function Register() {
             .finally(() => setLoading(false));
     };
     const validate1 = (value) => {
-        const regx = /^\w{3,}$/;
-        const msg = !!value && value.match(regx) ? '' : 'Vui lòng nhập ít nhất 3 ký tự';
+        const regx = /^(?=.*?[^\w\s]).{8,}$/;
+        const msg = !!value && value.match(regx) ? '' : 'Vui lòng nhập ít nhất 8 ký tự và ít nhất có 1 ký tự đặc biệt';
         return msg;
     };
 

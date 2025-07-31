@@ -1,7 +1,7 @@
 package app.model.mapper;
 
 import app.model.dto.ThumbnailDto;
-import app.model.Thumbnail;
+import app.model.postgres.Thumbnail;
 
 public class ThumbnailMapper {
     public static ThumbnailDto mapToDto(Thumbnail thumbnail) {

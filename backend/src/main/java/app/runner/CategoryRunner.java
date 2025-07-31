@@ -1,8 +1,8 @@
 package app.runner;
 
-import app.model.Category;
-import app.model.CategoryAttribute;
-import app.model.Product;
+import app.model.postgres.Category;
+import app.model.postgres.CategoryAttribute;
+import app.model.postgres.Product;
 import app.repository.postgres.AttributeValueRepository;
 import app.repository.postgres.CategoryRepository;
 import app.repository.postgres.ProductRepository;

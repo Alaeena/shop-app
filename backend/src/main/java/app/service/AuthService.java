@@ -4,14 +4,15 @@ import app.httpDto.AppResponse;
 import app.httpDto.AuthRequest;
 import app.httpDto.RegisterRequest;
 import app.httpDto.UserResponse;
-import app.model.ActivationRequest;
-import app.model.UserEntity;
 import app.model.mapper.UserMapper;
+import app.model.postgres.ActivationRequest;
+import app.model.postgres.UserEntity;
 import app.repository.postgres.ActivationRequestRepository;
 import app.repository.postgres.UserRepository;
-import app.utils.JwtUtils;
+import app.utils.jwt.JwtUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
@@ -85,6 +86,7 @@ public class AuthService {
                 .build();
     }
 
+    @Transactional
     public AppResponse refreshToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
         final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (header == null || !header.startsWith("Bearer")) {

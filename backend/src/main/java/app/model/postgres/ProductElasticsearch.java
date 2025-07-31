@@ -1,4 +1,4 @@
-package app.model;
+package app.model.postgres;
 
 import app.model.dto.AttributeValueDto;
 import app.model.dto.ThumbnailDto;

@@ -1,7 +1,7 @@
 package app.model.criteria;
 
 
-import app.model.Category;
+import app.model.postgres.Category;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

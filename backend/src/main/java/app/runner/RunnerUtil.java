@@ -1,7 +1,7 @@
 package app.runner;
 
-import app.model.*;
 import app.model.enums.Role;
+import app.model.postgres.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

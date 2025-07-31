@@ -1,16 +1,16 @@
 package app.service;
 
 import app.dao.CommentDao;
-import app.model.Comment;
-import app.model.OrderItem;
-import app.model.Product;
-import app.model.UserEntity;
 import app.model.dto.CommentDto;
 import app.model.dto.CommentListDto;
 import app.model.dto.ProductCommentDto;
 import app.model.dto.SimpleProductDto;
 import app.model.mapper.CommentMapper;
 import app.model.mapper.SimpleProductMapper;
+import app.model.postgres.Comment;
+import app.model.postgres.OrderItem;
+import app.model.postgres.Product;
+import app.model.postgres.UserEntity;
 import app.repository.postgres.CommentRepository;
 import app.repository.postgres.OrderItemRepository;
 import app.repository.postgres.ProductRepository;

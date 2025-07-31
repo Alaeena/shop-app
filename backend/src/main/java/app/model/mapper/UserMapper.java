@@ -1,7 +1,7 @@
 package app.model.mapper;
 
 import app.model.dto.UserDto;
-import app.model.UserEntity;
+import app.model.postgres.UserEntity;
 
 public class UserMapper {
 

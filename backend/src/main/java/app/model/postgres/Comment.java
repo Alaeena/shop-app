@@ -1,4 +1,4 @@
-package app.model;
+package app.model.postgres;
 
 import jakarta.persistence.*;
 import lombok.*;

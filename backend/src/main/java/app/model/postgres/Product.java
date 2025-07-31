@@ -1,4 +1,4 @@
-package app.model;
+package app.model.postgres;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -67,8 +67,8 @@ public class Product {
     )
     private Set<AttributeValue> attributes = new HashSet<>();
 
-    public Product(String name, Integer price, String description){
-        this(name,price);
+    public Product(String name, Integer price, String description) {
+        this(name, price);
         this.description = description;
     }
 

@@ -59,6 +59,7 @@ spring:
     url: ${VNPAY_URL}
     tmn-code: ${VNPAY_TMNCODE}
     secret-key: ${VNPAY_SECRET}
+    return-url: ${VNPAY-RETURNURL}
   data:
     redis:
       port: ${REDIS_PORT}

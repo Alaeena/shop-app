@@ -1,8 +1,9 @@
 package app.security;
 
-import app.utils.JwtUtils;
+import app.utils.jwt.JwtUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.Authentication;
@@ -15,6 +16,7 @@ public class LogoutService implements LogoutHandler {
     private final JwtUtils jwtUtils;
 
     @Override
+    @Transactional
     public void logout(
             HttpServletRequest request,
             HttpServletResponse response,

@@ -1,10 +1,10 @@
 package app.service;
 
-import app.model.*;
 import app.model.dto.CartDto;
 import app.model.dto.CartListDto;
 import app.model.mapper.CartListMapper;
 import app.model.mapper.CartMapper;
+import app.model.postgres.*;
 import app.repository.postgres.CartRepository;
 import app.repository.postgres.OrderItemRepository;
 import app.repository.postgres.OrderRepository;

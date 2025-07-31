@@ -1,7 +1,7 @@
 package app.model.mapper;
 
-import app.model.AttributeValue;
 import app.model.dto.AttributeValueDto;
+import app.model.postgres.AttributeValue;
 
 public class AttributeValueMapper {
     public static AttributeValueDto mapToDto(AttributeValue object) {

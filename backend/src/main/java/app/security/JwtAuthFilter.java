@@ -1,7 +1,7 @@
 package app.security;
 
 import app.httpDto.AppResponse;
-import app.utils.JwtUtils;
+import app.utils.jwt.JwtUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -68,8 +68,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                             new WebAuthenticationDetailsSource().buildDetails(request)
                     );
                     SecurityContextHolder.getContext().setAuthentication(authToken);
+                } else {
+                    throw new RuntimeException("Invalid token");
                 }
-
             }
         } catch (Exception ex) {
             AppResponse apiError = AppResponse.builder()

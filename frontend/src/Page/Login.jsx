@@ -46,13 +46,11 @@ function Login() {
             })
             .finally(() => setLoading(false));
     };
-    const validate = () => {};
-    // const validate = (value) => {
-    // const regx = /^(?=.*?[^\w\s]).{2,}$/;
-    // const msg =
-    // !!value && value.match(regx) ? '' : 'Please enter at least 8 characters that have a special character';
-    // return msg;
-    // };
+    const validate = (value) => {
+        const regx = /^(?=.*?[^\w\s]).{8,}$/;
+        const msg = !!value && value.match(regx) ? '' : 'Vui lòng nhập ít nhất 8 ký tự và ít nhất có 1 ký tự đặc biệt';
+        return msg;
+    };
 
     return (
         <div className={cx('container')}>

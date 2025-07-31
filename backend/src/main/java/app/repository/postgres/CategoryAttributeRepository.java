@@ -1,6 +1,6 @@
 package app.repository.postgres;
 
-import app.model.CategoryAttribute;
+import app.model.postgres.CategoryAttribute;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

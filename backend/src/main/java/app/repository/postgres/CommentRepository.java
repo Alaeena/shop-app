@@ -1,8 +1,8 @@
 package app.repository.postgres;
 
-import app.model.Comment;
-import app.model.Product;
-import app.model.UserEntity;
+import app.model.postgres.Comment;
+import app.model.postgres.Product;
+import app.model.postgres.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

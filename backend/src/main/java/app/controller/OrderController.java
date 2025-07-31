@@ -2,10 +2,10 @@ package app.controller;
 
 
 import app.httpDto.OrderCreationRequest;
-import app.model.UserEntity;
 import app.model.criteria.OrderPage;
 import app.model.dto.OrderDto;
 import app.model.enums.OrderState;
+import app.model.postgres.UserEntity;
 import app.service.OrderService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;

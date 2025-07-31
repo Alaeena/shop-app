@@ -1,7 +1,7 @@
 package app.model.mapper;
 
 import app.model.dto.TimeStampDto;
-import app.model.Timestamp;
+import app.model.postgres.Timestamp;
 
 public class TimeStampMapper {
     public static TimeStampDto mapToDto(Timestamp timestamp) {

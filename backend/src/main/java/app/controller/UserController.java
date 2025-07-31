@@ -2,7 +2,7 @@ package app.controller;
 
 import app.model.dto.UserDto;
 import app.model.mapper.UserMapper;
-import app.model.UserEntity;
+import app.model.postgres.UserEntity;
 import app.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

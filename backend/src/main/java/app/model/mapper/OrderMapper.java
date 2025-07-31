@@ -3,7 +3,7 @@ package app.model.mapper;
 import app.model.dto.OrderDto;
 import app.model.dto.OrderItemDto;
 import app.model.dto.TimeStampDto;
-import app.model.Order;
+import app.model.postgres.Order;
 
 import java.util.Set;
 import java.util.stream.Collectors;

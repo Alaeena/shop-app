@@ -1,9 +1,9 @@
 package app.dao;
 
 
-import app.model.Order;
 import app.model.criteria.OrderPage;
 import app.model.enums.OrderState;
+import app.model.postgres.Order;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;

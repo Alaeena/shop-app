@@ -2,7 +2,7 @@ package app.controller;
 
 import app.model.dto.CommentDto;
 import app.model.dto.ProductCommentDto;
-import app.model.UserEntity;
+import app.model.postgres.UserEntity;
 import app.service.CommentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

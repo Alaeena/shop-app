@@ -1,11 +1,11 @@
 package app.model.mapper;
 
-import app.model.AttributeValue;
 import app.model.dto.AttributeValueDto;
 import app.model.dto.ProductDto;
 import app.model.dto.ThumbnailDto;
-import app.model.Product;
-import app.model.ProductElasticsearch;
+import app.model.postgres.AttributeValue;
+import app.model.postgres.Product;
+import app.model.postgres.ProductElasticsearch;
 
 import java.util.List;
 import java.util.Map;

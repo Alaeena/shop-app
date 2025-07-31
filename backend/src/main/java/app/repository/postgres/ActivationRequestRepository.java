@@ -1,6 +1,6 @@
 package app.repository.postgres;
 
-import app.model.ActivationRequest;
+import app.model.postgres.ActivationRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

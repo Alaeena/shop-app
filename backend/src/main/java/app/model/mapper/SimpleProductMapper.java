@@ -1,7 +1,7 @@
 package app.model.mapper;
 
 import app.model.dto.SimpleProductDto;
-import app.model.Product;
+import app.model.postgres.Product;
 
 public class SimpleProductMapper {
 

@@ -3,16 +3,16 @@ package app.service;
 
 import app.dao.OrderDao;
 import app.httpDto.OrderCreationRequest;
-import app.model.*;
 import app.model.criteria.OrderPage;
 import app.model.dto.OrderDto;
 import app.model.enums.CheckoutType;
 import app.model.enums.OrderState;
 import app.model.mapper.OrderMapper;
+import app.model.postgres.*;
 import app.repository.postgres.AddressRepository;
 import app.repository.postgres.OrderItemRepository;
 import app.repository.postgres.OrderRepository;
-import app.utils.VNPayUtils;
+import app.utils.vnpay.VNPayUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +51,6 @@ public class OrderService {
 
         Map<String, String> params = vnPayUtils.getVNPayParams(total, description, orderType);
         vnPayUtils.cacheTransaction(params, orders);
-
         return vnPayUtils.createPaymentUrl(params);
     }
 
@@ -91,13 +90,12 @@ public class OrderService {
         }
 
         //Redirect URL
-        String redirectURL = "/user/checkout";
         if (request.checkoutType == CheckoutType.VNPAY) {
-            redirectURL = processVnPaymentUrl(shops);
-        } else if (request.checkoutType == CheckoutType.ONLINE) {
-            redirectURL = "/payment";
+            String redirectURL = processVnPaymentUrl(shops);
+            return Map.of("redirect", redirectURL);
+        } else {
+            return Map.of("result", "success");
         }
-        return Map.of("redirect", redirectURL);
     }
 
     public void cancelOrder(UserEntity user, Long orderId) {

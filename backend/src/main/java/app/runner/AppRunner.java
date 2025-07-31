@@ -1,8 +1,8 @@
 package app.runner;
 
-import app.model.*;
 import app.model.enums.AddressType;
 import app.model.enums.ShopType;
+import app.model.postgres.*;
 import app.repository.postgres.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -103,11 +103,11 @@ public class AppRunner implements CommandLineRunner {
                 Map.of("email", "QuocHung@dailymail.co.uk", "firstName", "Quoc", "lastName", "Hung"));
 
         List<Product> productList = categoryRunner.generateCategory();
-        UserEntity admin = createUser("admin", "123", ADMIN, true);
-        UserEntity user = createUser("ducnbk7a1@gmail.com", "123", USER, false);
-        UserEntity user2 = createUser("phuocdeptraivl@gmail.com", "123", USER, false);
-        UserEntity user3 = createUser("helloWorld@gmail.com", "123", USER, false);
-        UserEntity user4 = createUser("SeekNDstroy750@gmail.com", "123", USER);
+        UserEntity admin = createUser("admin", "admin@123", ADMIN, true);
+        UserEntity user = createUser("ducnbk7a1@gmail.com", "vanduc@123", USER, false);
+        UserEntity user2 = createUser("phuocdeptraivl@gmail.com", "phuoc@123", USER, false);
+        UserEntity user3 = createUser("helloWorld@gmail.com", "world@123", USER, false);
+        UserEntity user4 = createUser("SeekNDstroy750@gmail.com", "seek@123", USER);
 
         Shop defaultShop = new Shop("Laptop shop", "https://down-bs-vn.img.susercontent.com/b209fadc529ed6b57b5c00a335f66ad8_tn", ShopType.COMPUTERS_OFFICE);
         Shop shop = new Shop("User shop", "https://down-bs-vn.img.susercontent.com/019ed89d540c28d61fbd0e29761ebd4a_tn", ShopType.BOOKS_MAGAZINES);

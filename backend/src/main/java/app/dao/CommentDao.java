@@ -1,6 +1,6 @@
 package app.dao;
 
-import app.model.Comment;
+import app.model.postgres.Comment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;

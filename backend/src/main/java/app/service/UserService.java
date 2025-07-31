@@ -1,10 +1,10 @@
 package app.service;
 
 
-import app.model.UserEntity;
 import app.model.dto.UserDto;
 import app.model.enums.Role;
 import app.model.mapper.UserMapper;
+import app.model.postgres.UserEntity;
 import app.repository.postgres.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

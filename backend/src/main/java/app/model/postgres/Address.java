@@ -1,4 +1,4 @@
-package app.model;
+package app.model.postgres;
 
 import app.model.enums.AddressType;
 import jakarta.persistence.*;

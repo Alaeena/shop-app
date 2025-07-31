@@ -2,7 +2,7 @@ package app.dao;
 
 import app.model.criteria.ProductCriteria;
 import app.model.criteria.ProductPage;
-import app.model.Product;
+import app.model.postgres.Product;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;

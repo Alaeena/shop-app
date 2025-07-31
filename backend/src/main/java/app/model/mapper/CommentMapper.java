@@ -1,8 +1,8 @@
 package app.model.mapper;
 
-import app.model.Comment;
 import app.model.dto.CommentDto;
 import app.model.dto.ThumbnailDto;
+import app.model.postgres.Comment;
 
 import java.util.List;
 import java.util.stream.Collectors;

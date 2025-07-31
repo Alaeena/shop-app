@@ -1,8 +1,8 @@
 package app.model.mapper;
 
-import app.model.Cart;
 import app.model.dto.CartListDto;
 import app.model.dto.OrderItemDto;
+import app.model.postgres.Cart;
 
 import java.util.List;
 import java.util.stream.Collectors;

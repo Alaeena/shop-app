@@ -1,11 +1,11 @@
 package app.model.mapper;
 
-import app.model.Cart;
 import app.model.dto.CartDto;
 import app.model.dto.OrderItemDto;
 import app.model.dto.ShopDto;
 import app.model.dto.ShopOrderDto;
-import app.model.OrderItem;
+import app.model.postgres.Cart;
+import app.model.postgres.OrderItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;

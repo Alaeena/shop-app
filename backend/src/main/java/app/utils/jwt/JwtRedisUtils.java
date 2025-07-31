@@ -1,12 +1,12 @@
-package app.utils;
+package app.utils.jwt;
 
-import app.model.UserEntity;
 import app.model.enums.TokenType;
+import app.model.postgres.UserEntity;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -18,29 +18,12 @@ import java.util.HashMap;
 import static app.model.enums.TokenType.ACCESS_TOKEN;
 
 @Component
+@Profile("dev")
 @RequiredArgsConstructor
-public class JwtUtils {
+public class JwtRedisUtils extends JwtUtils {
     private final RedisTemplate<String, String> redisTemplate;
-    private final String REFRESH_TOKEN_PREFIX = "refresh_token_";
-    private final String ACCESS_TOKEN_PREFIX = "access_token_";
 
-    @Value("${spring.security.jwt.secret-key}")
-    private String secretKey;
-    @Value("${spring.security.jwt.expiration}")
-    private long jwtExpiration;
-    @Value("${spring.security.jwt.refresh-token.expiration}")
-    private long refreshExpiration;
-
-
-    private Claims extractAllClaim(String token) {
-        return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
-    }
-
-    public String extractEmail(String token) {
-        Claims claims = extractAllClaim(token);
-        return claims.getSubject();
-    }
-
+    @Override
     public String buildToken(UserEntity userEntity, TokenType tokenType) {
         long expiration = tokenType == ACCESS_TOKEN ? jwtExpiration : refreshExpiration;
         String prefix = tokenType == ACCESS_TOKEN ? ACCESS_TOKEN_PREFIX : REFRESH_TOKEN_PREFIX;
@@ -56,6 +39,7 @@ public class JwtUtils {
         return token;
     }
 
+    @Override
     public void revokeToken(String token) {
         Claims claims = extractAllClaim(token);
         String tokenId = claims.getId();
@@ -63,6 +47,7 @@ public class JwtUtils {
         redisTemplate.delete(ACCESS_TOKEN_PREFIX + tokenId);
     }
 
+    @Override
     public boolean isTokenValid(String token, UserDetails userDetails, TokenType tokenType) {
         Claims claims = extractAllClaim(token);
         String prefix = tokenType == ACCESS_TOKEN ? ACCESS_TOKEN_PREFIX : REFRESH_TOKEN_PREFIX;
@@ -73,8 +58,6 @@ public class JwtUtils {
         String cacheSignature = redisTemplate.opsForValue().get(prefix + uuid);
 
         return userDetails.getUsername().equals(email)
-                && cacheSignature.equals(signature);
+                && signature.equals(cacheSignature);
     }
-
-
 }

@@ -1,8 +1,14 @@
-package app.utils;
+package app.utils.vnpay;
 
-import app.model.Order;
-import app.model.serializable.UserOrders;
-import app.repository.redis.UserOrdersRepository;
+import app.model.enums.OrderState;
+import app.model.enums.VnpResponseCode;
+import app.model.enums.VnpTransactionStatus;
+import app.model.postgres.Order;
+import app.model.postgres.Timestamp;
+import app.model.postgres.Transaction;
+import app.model.postgres.UserEntity;
+import app.repository.postgres.OrderRepository;
+import app.repository.postgres.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -12,22 +18,28 @@ import javax.crypto.spec.SecretKeySpec;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
+
+import static app.model.enums.OrderState.PENDING;
 
 @Component
 @RequiredArgsConstructor
-public class VNPayUtils {
-    public final String vnp_ReturnUrl = "/payment";
-    private final UserOrdersRepository userOrdersRepository;
+public abstract class VNPayUtils {
+    private final UserRepository userRepository;
+    private final OrderRepository orderRepository;
 
+    @Value("${spring.vnpay.return-url}")
+    protected String vnp_ReturnUrl;
     @Value("${spring.vnpay.tmn-code}")
-    public String vnp_TmnCode;
+    protected String vnp_TmnCode;
     @Value("${spring.vnpay.secret-key}")
-    public String secretKey;
+    protected String secretKey;
     @Value("${spring.vnpay.url}")
-    public String vnp_PayUrl;
+    protected String vnp_PayUrl;
     @Value("${server.client-url}")
-    private String clientUrl;
+    protected String clientUrl;
 
     private String getRandomNumber(int len) {
         Random rnd = new Random();
@@ -38,6 +50,59 @@ public class VNPayUtils {
         }
         return sb.toString();
     }
+
+    protected Transaction buildTransaction(Map<String, String> fields, Long userId, List<Long> orderIds) {
+        String bankCode = fields.get("vnp_BankCode");
+        String bankTranNo = fields.get("vnp_BankTranNo");
+        String cardType = fields.get("vnp_CardType");
+
+        String orderInfo = fields.get("vnp_OrderInfo");
+        String transactionNo = fields.get("vnp_TransactionNo");
+        String transactionStatus = fields.get("vnp_TransactionStatus");
+        String responseCode = fields.get("vnp_ResponseCode");
+        String txnRef = fields.get("vnp_TxnRef");
+
+        // Parse amount (divide by 100 as per VNPAY doc)
+        long amount = Long.parseLong(fields.get("vnp_Amount"));
+
+        // Parse date (yyyyMMddHHmmss)
+        String payDateStr = fields.get("vnp_PayDate");
+        LocalDateTime payDate = null;
+        if (payDateStr != null && !payDateStr.isEmpty()) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+            payDate = LocalDateTime.parse(payDateStr, formatter);
+        }
+        UserEntity user = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+        List<Order> orders = orderRepository.findAllById(orderIds);
+        orders.forEach(order -> {
+            order.setState(OrderState.PENDING);
+            order.addTimestamp(new Timestamp(PENDING));
+            order.setPaid(true);
+        });
+        if (orders.isEmpty()) {
+            throw new IllegalArgumentException("Orders not found");
+        }
+        // Build transaction
+        Transaction tx = new Transaction();
+        tx.setOrders(orders);
+        tx.setUser(user);
+        tx.setAmount(amount);
+        tx.setBankCode(bankCode);
+        tx.setBankTransactionNo(bankTranNo);
+        tx.setCardType(cardType);
+        tx.setOrderInfo(orderInfo);
+        tx.setTransactionNo(transactionNo);
+        tx.setTxnRef(txnRef);
+        tx.setPaymentDate(payDate);
+        tx.setStatus(VnpTransactionStatus.fromCode(transactionStatus));
+        tx.setResponseCode(VnpResponseCode.fromCode(responseCode));
+        return tx;
+    }
+
+    public abstract void cacheTransaction(Map<String, String> params, List<Order> orders);
+
+    public abstract Transaction getTransaction(Map<String, String> fields);
 
     public Map<String, String> getVNPayParams(long amount, String description, String orderType) {
         String vnp_Version = "2.1.0";
@@ -72,22 +137,6 @@ public class VNPayUtils {
         params.put("vnp_ExpireDate", vnp_ExpireDate);
 
         return params;
-    }
-
-    public void cacheTransaction(Map<String, String> params, List<Order> orders) {
-        if (orders == null || orders.isEmpty()) {
-            return;
-        }
-        String vnp_TxnRef = params.get("vnp_TxnRef");
-        long userId = orders.get(0).getUser().getId();
-
-        UserOrders userOrders = new UserOrders();
-        userOrders.setId(vnp_TxnRef);
-        userOrders.setUserId(userId);
-        for (Order order : orders) {
-            userOrders.addOrder(order);
-        }
-        userOrdersRepository.save(userOrders);
     }
 
     public String createPaymentUrl(Map<String, String> params) {

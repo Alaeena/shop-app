@@ -1,4 +1,4 @@
-package app.model;
+package app.model.postgres;
 
 import app.model.enums.VnpResponseCode;
 import app.model.enums.VnpTransactionStatus;
@@ -18,6 +18,7 @@ import java.util.List;
 public class Transaction {
     LocalDateTime paymentDate;
     @Id
+    @GeneratedValue
     private long id;
 
     @OneToMany(mappedBy = "transaction", cascade = CascadeType.MERGE)

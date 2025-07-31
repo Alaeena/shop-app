@@ -2,7 +2,7 @@ package app.controller;
 
 
 import app.model.dto.AddressDto;
-import app.model.UserEntity;
+import app.model.postgres.UserEntity;
 import app.service.AddressService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

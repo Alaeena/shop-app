@@ -1,7 +1,7 @@
 package app.model.mapper;
 
-import app.model.CategoryAttribute;
 import app.model.dto.CategoryAttributeDto;
+import app.model.postgres.CategoryAttribute;
 
 import java.util.Set;
 import java.util.stream.Collectors;

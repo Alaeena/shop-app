@@ -1,6 +1,6 @@
-package app.model.serializable;
+package app.model.redis;
 
-import app.model.Order;
+import app.model.postgres.Order;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;

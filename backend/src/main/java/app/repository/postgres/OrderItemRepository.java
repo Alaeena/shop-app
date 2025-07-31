@@ -1,7 +1,7 @@
 package app.repository.postgres;
 
-import app.model.OrderItem;
-import app.model.Product;
+import app.model.postgres.OrderItem;
+import app.model.postgres.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

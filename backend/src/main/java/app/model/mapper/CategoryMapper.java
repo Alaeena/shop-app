@@ -1,10 +1,10 @@
 package app.model.mapper;
 
 import app.httpDto.CategoryDetail;
-import app.model.Category;
 import app.model.dto.CategoryAttributeDto;
 import app.model.dto.CategoryDto;
 import app.model.dto.SubCategoryDto;
+import app.model.postgres.Category;
 
 import java.util.HashSet;
 import java.util.List;

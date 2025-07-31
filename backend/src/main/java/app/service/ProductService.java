@@ -1,11 +1,11 @@
 package app.service;
 
-import app.model.Product;
-import app.model.ProductElasticsearch;
 import app.model.criteria.ProductPage;
 import app.model.dto.ProductDto;
 import app.model.dto.ProductListDto;
 import app.model.mapper.ProductMapper;
+import app.model.postgres.Product;
+import app.model.postgres.ProductElasticsearch;
 import app.repository.postgres.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

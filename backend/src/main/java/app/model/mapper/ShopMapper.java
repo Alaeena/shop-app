@@ -1,7 +1,7 @@
 package app.model.mapper;
 
 import app.model.dto.ShopDto;
-import app.model.Shop;
+import app.model.postgres.Shop;
 
 public class ShopMapper {
     public static ShopDto mapToDto(Shop object) {

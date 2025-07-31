@@ -1,7 +1,7 @@
 package app.repository.postgres;
 
-import app.model.Address;
-import app.model.UserEntity;
+import app.model.postgres.Address;
+import app.model.postgres.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

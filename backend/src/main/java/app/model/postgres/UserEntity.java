@@ -1,4 +1,4 @@
-package app.model;
+package app.model.postgres;
 
 
 import app.httpDto.RegisterRequest;

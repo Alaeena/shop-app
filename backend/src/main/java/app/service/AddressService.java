@@ -1,9 +1,9 @@
 package app.service;
 
-import app.model.Address;
-import app.model.UserEntity;
 import app.model.dto.AddressDto;
 import app.model.mapper.AddressMapper;
+import app.model.postgres.Address;
+import app.model.postgres.UserEntity;
 import app.repository.postgres.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package app.model.mapper;
 
 import app.model.dto.OrderItemDto;
-import app.model.OrderItem;
+import app.model.postgres.OrderItem;
 
 public class OrderItemMapper {
     public static OrderItemDto mapToDto(OrderItem object) {

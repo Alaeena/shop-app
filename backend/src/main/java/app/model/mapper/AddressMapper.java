@@ -1,7 +1,7 @@
 package app.model.mapper;
 
-import app.model.Address;
 import app.model.dto.AddressDto;
+import app.model.postgres.Address;
 
 public class AddressMapper {
     public static Address mapToObject(AddressDto dto) {

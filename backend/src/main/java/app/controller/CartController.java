@@ -2,7 +2,7 @@ package app.controller;
 
 import app.model.dto.CartDto;
 import app.model.dto.CartListDto;
-import app.model.UserEntity;
+import app.model.postgres.UserEntity;
 import app.service.CartService;
 import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
